@@ -1,0 +1,414 @@
+ /*#Media Queries Responsive
+================================================== */
+
+/* Desktop large
+------------------------- */
+@media (min-width: 1200px) {
+    .mfp-iframe-scaler iframe {height: 471px!important;}
+
+}
+@media (min-width: 1950px) and (max-width: 2300px) {
+
+	.facility .type1 img { height: 675px; }
+
+}
+@media (min-width: 1201px) and (max-width: 1398px) {
+
+	.book-now { left: 120px; }
+	.banner-holder .number { bottom: 35%; }
+	.flexslider .flex-direction-nav .flex-next { left: 93%; }
+	.flexslider .flex-direction-nav .flex-prev { left: 95%; }
+	.room-list .holder h4 { line-height: 32px; }
+	.menu-button.stuck { height: 40px; width: 40px; padding: 13px 9px 8px 9px; }
+	.room-list .holder p { width: 90%; }
+
+	.menu-list ul li a { font-size: 30px; padding: 25px 0px; }
+	.intro .text h1::after { left: -50px; width: 40px; }
+	.flexslider .slides img { height: 100vh; }
+	.owl-nav > div { top: 35%; }
+	.facility .type1 img { height: 420px; }
+	.facility .type1 .overlay { height: 250px; }
+	.facility .type2 .overlay { height: 220px; background: linear-gradient(0deg, rgba(0,0,0,4) 12%, rgba(255,255,255,0) 55%); }
+	.facility .type1 .overlay h2 { font-size: 24px; letter-spacing: 0px;  word-spacing: 5px; line-height: 28px; }
+	.facility .type1 img { height: 470px; }
+}
+
+/*@media (min-width: 1200px) and (max-width: 1260px) {
+
+
+}
+*/
+
+@media (min-width: 1201px) and (max-width: 1400px) {
+	.common .rooms-headline { padding-top: 18%; padding-bottom: 10%; margin: 0 auto; width: 72%;}
+	.common .rooms-headline h1 {font-size: 46px;}
+	.roomtag .roomtxt {padding-left: 0px;}
+	.roomtag .roomtxt h3 { font-size: 45px; line-height: 55px; }
+	.common .room-amenities .prime-features .istruments h4::after {left: 5px;width: 45px;}
+	.room-list .holder h4 {font-size: 30px; padding-bottom: 15px;}
+	.room-list .holder h4::after {top: 17px;}
+	.pageslider .flex-direction-nav .flex-next {left: 100%;}
+	.pageslider .flex-direction-nav .flex-prev {left: -7%;}
+	.zoom-gallery > div {}
+	.facility .type1 img { height: 470px; }
+	.footer ul.address {margin-left: -29px;}
+	.footer p.copyright {font-size: 15px;padding-left: 35px;}
+	.footer ul.apps {margin-left: 81px;}
+}
+
+/* Desktop
+------------------------- */
+
+@media (min-width: 980px) and (max-width: 1199px) {
+
+	.book-now { left: 100px; }
+	.banner-holder .number { bottom: 35%; }
+	.flexslider li .meta { left: 10%; width: 80%; }
+	.flexslider .flex-direction-nav .flex-next { left: 91%; }
+	.flexslider .flex-direction-nav .flex-prev { left: 93.5%; }
+	.room-list .holder h4 { line-height: 32px; }
+	.menu-button.stuck { height: 35px; width: 35px; padding: 10px 7px 5px 5px; }
+	.menu-button { top: 19px; left: 0px !important; }
+	.room-list .holder p { width: 90%; }
+	.room-list .holder h4 { padding-left: 60px; }
+	.room-list .holder p {  padding-left: 60px; }
+	.owl-nav > div { top: 35%; }
+
+	.flexslider .slides img { height: 100vh; min-height: 100vh; }
+	.book-now { left: 120px; }
+	.meta h1 { font-size: 35px; }
+	.facility .type1 img { height: 325px; }
+	.facility .type1 .overlay { height: 250px; }
+	.facility .type2 .overlay { height: 220px; background: linear-gradient(0deg, rgba(0,0,0,4) 12%, rgba(255,255,255,0) 55%); }
+	.facility .type1 .overlay h2 { font-size: 24px; letter-spacing: 0px;  word-spacing: 5px; line-height: 28px; }
+	.facility .type2 .overlay h2 { font-size: 24px; letter-spacing: 0px;  word-spacing: 5px; line-height: 28px; }
+	.facility .type2 .overlay p { padding: 0px 20px 10px 20px; }
+	.facility .type2 .overlay h2 { font-size: 24px; letter-spacing: 0px;  word-spacing: 5px; line-height: 28px; }
+	.menu-list ul li a { padding: 15px 0px; font-size: 25px; }
+    .mfp-iframe-scaler iframe {height: 90%!important;}
+  	#filters li span {padding: 0px 10px; font-size: 15px;}
+	.vtours-section .zoom-gallery > div { width: 190px; height: auto;}
+    .video-holder {height: 430px;}
+	.footer ul.footer-ul li { padding: 0px 0px; }
+	.footer button.btn-1 span.btn-1 a.btn-1 { font-size: 15px; padding: 5px 5px; }
+
+}
+
+
+
+@media (min-width: 991px) and (max-width: 1081px) {
+	.common .rooms-headline { padding-top: 18%; padding-bottom: 10%; margin: 0 auto; width: 72%;}
+	.common .rooms-headline h1 {font-size: 38px;}
+	.roomtag {padding: 70px 0px; padding-left: 10%;}
+	.roomtag .roomtxt h3 {font-size: 43px;}
+
+}
+
+
+
+@media (min-width: 980px) and (max-width: 991px) {
+
+	.vtours-section .zoom-gallery > div:nth-child(3n) {
+		margin-right: 0px!important;
+	}
+
+
+}
+
+
+
+
+/* Tablet to desktop
+------------------------- */
+@media (min-width: 768px) and (max-width: 979px) {
+
+	.book-now { left: 80px; }
+	.header .logo img { width: 170px; }	
+	.header .social-ul li { width: 30px; }
+	.couple { display: none; }
+	.banner-holder .number { bottom: 35%; }
+
+	.flexslider li .meta { left: 10%; width: 80%; }
+	.flexslider .flex-direction-nav .flex-next { left: 88.5%; }
+	.flexslider .flex-direction-nav .flex-prev { left: 91.5%; }
+	.room-list .holder h4 { line-height: 32px; }
+	.menu-button.stuck { height: 35px; width: 35px; padding: 10px 7px 5px 5px; }
+	.menu-button { top: 19px; left: 0px !important; }
+	.room-list .holder p { width: 90%; }
+	.room-list .holder h4 { padding-left: 60px; }
+	.room-list .holder p {  padding-left: 60px; }
+	.owl-nav > div { top: 25%; }
+	.facility .type1 .overlay h2 { font-size: 30px; padding: 70px 20px 10px 20px; letter-spacing: 1px; word-spacing: 2px; line-height: 27px; min-height: 130px; }
+	.facility .type1 .overlay p { font-size: 14px; padding: 5px 20px 0px 20px; line-height: 14px; }
+	.facility .type2 .overlay h2 { font-size: 30px; padding: 70px 20px 10px 20px; letter-spacing: 1px; word-spacing: 2px; line-height: 27px; min-height: 130px; }
+	.facility .type2 .overlay p { font-size: 14px; padding: 5px 20px 0px 20px; line-height: 14px; }
+	.footer ul.footer-ul li { padding: 0px 0px; }
+
+	.common.room-landing .room-thumb {margin-top: 15px;}
+	.room-landing .room-thumb h4 {font-size: 28px; padding-left: 0; padding-bottom: 0; text-align: left; letter-spacing: 2px; word-spacing: 3px; line-height: 35px;}
+	.room-thumb .wellnesscontent {padding-left: 0px;padding-top: 10px;}
+	.common .headline-landing h2 {font-size: 35px; line-height: 40px;padding-bottom: 20px;}
+	.common .headline-landing p {width: 90%;}
+	.common .rooms-headline { padding-top: 18%; padding-bottom: 10%; margin: 0 auto; width: 72%;}
+	.common .rooms-headline h1 {font-size: 38px;}
+	.roomtag .roomtxt {padding-left: 0px;padding: 0% 15%;}
+	.roomtag .roomtxt h3 { font-size: 40px;line-height: 45px;margin-bottom: 20px; }
+	.roomtag .roomtxt h2::after {left: -11px; top: 12px; width: 60px;}
+	.test2.in-view {padding: 0% 15%;}
+	.common .room-amenities .prime-features .istruments h4 {font-size: 20px;}
+	.common .room-amenities .prime-features .istruments h4::after {left: 5px;width: 45px;}
+	.room-list .holder h4 {font-size: 30px; padding-bottom: 15px;}
+	.room-list .holder h4::after {top: 17px;}
+	.pageslider .flex-direction-nav .flex-next {left: 100%;}
+	.pageslider .flex-direction-nav .flex-prev {left: -11%;}
+	.onpageheader .logo .logotop {background-size: 165px auto;margin-top: -30px;}
+	.gap-30 {min-height: 15px;}
+	.roomtag {padding: 50px 0px;}
+	.pageslider .flex-control-nav {display: none;}
+	.common .room-amenities .prime-features {padding: 0%;}
+	.common .room-amenities .prime-features .istruments h4 {padding-bottom: 0px;}
+	.video-holder {width: 100%; height: auto;}
+	.common .page-rooms h5 {margin-bottom: 20px;}
+    /*.mfp-iframe-scaler iframe {height: unset!important;}*/
+    .mfp-iframe-scaler iframe {height: 90%!important;}
+    .video-holder {height: 330px;}
+    .on990 {padding: 0% 0%!important;}
+  	#filters li span {padding: 0px 10px; font-size: 15px;}
+	.vtours-section .zoom-gallery > div { width: 190px; height: auto;}
+
+	/*-------popup menu---------*/
+	.menu-list {padding: 10% 5%;}
+	.test2.in-view {padding: 0% 3%;}
+	.menu-list ul li a {padding: 10px 0px; font-size: 25px; line-height: 30px;}
+	.menu-list ul.menucontact {width: 100%;}
+	.menu-list ul.menucontact p {position: relative;display: inline-block;width: 33%;vertical-align: top;word-wrap: break-word;padding-right: 15px;}
+	/*-----End popup menu---------*/
+
+}
+
+/* All Mobile Sizes (devices and browser)
+------------------------- */
+@media only screen and (max-width: 767px) {
+	.header .logo img { width: 200px; }
+	.main-menu ul.menu-level-1>li.is-parent .menu-below-indicator { right: -90% !important; }
+	.menu-button__bar.menu-button__bar--4 span.menu_title { opacity: 0 !important; }
+	span.menu_title { top: -20px; }
+	.header .social-ul { display: none; }
+	.book-now { display: block; }
+	.flexslider li.flex-active-slide .meta h1 { font-size: 25px; line-height: 40px; }
+	.flexslider li .meta { top: 40%; left: 0%; width: 100%; }
+	.meta h2 { font-size: 20px; letter-spacing: 0px;  word-spacing: 2px; }
+	.flexslider .flex-direction-nav .flex-prev { left: 87%; }
+	.flexslider .flex-direction-nav .flex-next { left: 80%; }
+
+	.intro { padding: 50px 0px; }
+	.intro .text h2 { font-size: 30px; line-height: 35px; letter-spacing: 2px; padding-bottom: 10px; }
+	.video-text { width: 95%; }
+	.video-text h4 { font-size: 24px; letter-spacing: 0px; word-spacing: 1px; }
+
+	.couple { position: absolute; float: right; z-index: -1; }
+	.intro-2 h2 { font-size: 35px; padding-left: 120px; line-height: 35px; letter-spacing: 1px; font-weight: 700; }
+	.room-list .owl-carousel .owl-item img { height: auto; }
+	.owl-nav > div { top: 40%; }
+
+	.owl-carousel .owl-stage-outer { padding-bottom: 0px; }
+	.room-list .holder h4 { line-height: 30px; padding-left: 60px;}
+	.room-list .holder { bottom: -30px; padding-bottom: 20px; }
+	.room-list .holder p { width: 100%; font-size: 15px; padding-left: 0px; padding-bottom: 30px; }
+	.facility { padding: 0px 0px 50px 0px; margin-top: 0px; }
+	.facility .type1 img { height: auto; width: 100%; }
+
+	.facility .type2 img { height: auto; width: 100%; }
+	.facility .type1 .overlay p { display: none; }
+	.facility .type2 .overlay p { display: none; }
+	.facility .text-holder h2 { font-size: 35px; padding: 35px 0px 25px 0px; padding-left: 120px; line-height: 40px; letter-spacing: 1px; }
+	.facility .type1 .overlay h2 { padding: 50px 20px 10px 20px; font-size: 23px; letter-spacing: 0px; word-spacing: 0px;}	
+	.facility .type2 .overlay h2 { padding: 60px 20px 10px 20px; font-size: 23px; letter-spacing: 0px; word-spacing: 0px;}	
+	.facility p { width: 100%; }
+	.facility .type2.gap { margin-bottom: 1px; }
+	.footer button.btn-1 span.btn-1 a.btn-1 { font-size: 14px; color: #fff; padding: 0px 5px; }
+
+	.booking { display: block; }
+	/*.book-button { display: none; } */
+	.facility .type1 .overlay { height: 100px; }
+	.menu-list ul { width: 100%; }
+	.menu-list ul li a { padding: 10px 0px; font-size: 20px; }
+	.menu-list { padding: 3% 0% 0% 25%; }
+	.menu-list ul li a:hover:after { top: 20px; }
+	#menuToggle { top: -15px; left: 10px; }
+	.book-now { display: none; left: 70px; top: -15px; }
+	.owl-nav i { display: none; }
+	.flex-direction-nav { display: none; }
+	.flexslider { background-color: transparent; }
+	.flexslider li .meta { display: none; }
+	.header .logo {  width: 170px; height: 70px; }
+	.header .logo .logotop { margin-top: -40px; background-size: contain; }
+	.banner-holder .number { display: none; }
+	.banner-holder .number { display: none; }
+	.banner-holder .total-slide { display: none; }
+	.flexslider .slides {  min-height: auto; } 
+	.flexslider .flex-direction-nav .flex-next { top: 75%; }
+	.menu.sticky-menu { display: none !important; }
+	.video-holder { height: 320px; }
+	.video-holder { height: 300px; margin-bottom: 10px; } 
+	.facility .type2 .overlay { height: 100px; }
+	.facility .type2.gap { margin-bottom: 25px; }
+	.facility .type1 { margin-bottom: 30px; }
+	.menu-button.active { left: 7px !important; top: 5px; }
+	.room-list .holder h4 { font-size: 30px; padding-bottom: 10px; }
+    .on990 {padding: 0% 0%!important;}
+  	#filters li span {padding: 0px 10px; font-size: 15px;}
+	.vtours-section .zoom-gallery > div { width: 190px; height: auto;}
+	.offer { padding-left: 0%; padding-right: 0%; padding-top: 40px; padding-bottom: 40px; }
+	.offer h3.headline { margin-top: 20px; padding-bottom: 10px; padding-left: 0%; }
+	.offer h2 { display: none; margin-top: 15px; }
+	.menu-list ul.menucontact { display: none; }
+	.facility .holder-facility { padding-left: 0%; padding-right: 0%; }
+	p.copyright span { display: block; }
+	.common .room-highlight .prime-features .istrument span { padding-top: 0px; }
+	.roomtag .roomtxt h1 {font-size: 28px;}
+	.common .headline-landing h2 { margin-left: 0px; }
+	.roomtag .roomtxt h1 {font-size: 25px; line-height: 35px; padding-bottom: 15px;}
+}
+
+/* Mobile Landscape & Tablet Portrait
+------------------------- */
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+	#menuToggle {top: 5px;left: 15px;}
+	.onpageheader .logo {width: 190px;height: 85px; position: absolute; top: -45px; left: 50%; margin-left: -77px;}
+	.onpageheader .logo .logotop {background-size: 80%;}
+	.onpageheader .social-ul li {width:25px;}
+	.common .pgban-presidential {background-size: 100%;}
+	.common .rooms-headline {width: 100%;padding-top: 18%;padding-bottom: 10%;}
+	.common .rooms-headline h1{font-size: 35px; padding: 40px 0px 0px 0px; margin: 0 auto; text-align: center;}
+	.common .rooms-headline h1::after {content: none;}
+	.common .room-highlight .prime-features {padding: 0% 7%;}
+	.common .room-highlight .prime-features .istrument {padding-bottom: 10px;}
+	.roomtag {padding: 40px 0px;}
+	.roomtag .roomtxt h3 {font-size: 25px;line-height: 28px;margin-bottom: 10px;}
+
+	.test2.in-view {padding: 0% 0%;}
+	.test2.tagline {padding: 0%;}
+	.common .room-amenities .prime-features .istruments h4 {font-size: 25px;}
+	.common .room-amenities .prime-features .istruments h4::after {left: 5px;width: 45px;}
+	.room-list .holder h4 {font-size: 25px; padding-bottom: 15px;}
+	.room-list .holder h4::after {top: 17px;}
+	.pageslider .flex-direction-nav .flex-next {left: 50%;}
+	.pageslider .flex-direction-nav .flex-prev {left: -11%;}
+
+	.roomtag .roomtxt {padding-left: 0; width: 100%;}
+	.common .headline-landing {padding-top: 150px;width: 100%;}
+	.common .headline-landing h2 {font-size: 35px; line-height: 35px; padding-top: 10px; padding-bottom: 25px;}
+	.common .headline-landing p {width: 100%;}
+	.onpageheader .logo .logotop {background-size: 175px auto;margin-top: 0px;}
+	.onpageheader .logo {height: 87px;}
+	.onpageheader .logo .logotoppage {background-size: 125px auto;margin-top: 0px;}
+	.common .room-thumb {margin-top: 10px;}
+	.room-landing .room-thumb h3 {padding-bottom: 0px; margin-top: 5px;}
+	.room-landing .room-thumb h4 {line-height: 32px;font-size: 23px;padding: 5px 10px 0px 10px;letter-spacing: 1px;word-spacing: 1px;}
+	.common.room-landing .presdtrshial {width: 100%;}
+
+	.gap-30 {min-height: 15px;}
+	.roomtag {padding: 15px 15px;}
+	.pageslider .flex-control-nav {display: block;}
+	.common .room-amenities {padding: 35px 0px;}
+	.common .room-amenities .prime-features {padding: 5% 5% 5% 5%;}
+	.common .room-amenities .prime-features .istruments h4 {padding-bottom: 0px;}
+	.video-holder {width: 100%; height: 220px;}
+	.common .page-rooms {margin: 20px 0px;}
+	.common .page-rooms h5 {margin-bottom: 20px; font-size: 25px;}
+	.common .room-amenities .prime-features .istruments ul {padding-bottom: 20px;}
+	.roomtag .roomtxt h2::after { position: absolute; left: -6px; top: 12px; width: 40px;}
+	.banner-holder .pageslider {margin-bottom: 15px; padding: 0px 15px;}
+    .mfp-iframe-scaler iframe {height: 60% !important;}
+    .offer h2 { display: none; }
+    .facility .intro .intro-facility { padding: 5% 3% 0 3%; }
+    .footer ul.address {margin-top: 5px;}
+}
+
+/* Mobile Portrait
+------------------------- */
+@media only screen and (max-width: 479px) {
+	#menuToggle {top: 5px;left: 15px;}
+	.onpageheader .logo {width: 150px;height: 57px; position: absolute; top: -45px; left: 50%; margin-left: -77px;}
+	.onpageheader .logo .logotop {background-size: 80%;}
+	.common .pgban-presidential {background-size: 100%;}
+	.common .rooms-headline {width: 100%;padding-top: 18%;padding-bottom: 10%;}
+	.common .rooms-headline h1{font-size: 30px; padding: 40px 0px 0px 0px; margin: 0 auto; text-align: center;}
+	.common .rooms-headline h1::after {content: none;}
+	.common .room-highlight .prime-features {padding: 0% 7%;}
+	.common .room-highlight .prime-features .istrument {padding-bottom: 10px;}
+	.roomtag {padding: 40px 0px;}
+	.roomtag .roomtxt h3 {font-size: 25px;line-height: 28px;margin-bottom: 10px;}
+
+	.test2.in-view {padding: 0% 0%;}
+	.test2.tagline {padding: 0% 0%;}
+	.common .headline-landing h2 {font-size: 25px;line-height: 25px;padding-bottom: 15px;}
+	.common .room-amenities .prime-features .istruments h4 {font-size: 20px;}
+	.common .room-amenities .prime-features .istruments h4::after {left: 5px;width: 45px;}
+	.room-list .holder h4 {font-size: 25px; padding-bottom: 15px;}
+	.room-list .holder h4::after {top: 17px;}
+	.roomtag .roomtxt {padding-left: 0; width: 100%;}
+	.roomtag .roomtxt h1 {font-size: 25px; line-height: 35px; padding-bottom: 15px;}
+	.pageslider .flex-direction-nav .flex-next {left: 50%;}
+	.pageslider .flex-direction-nav .flex-prev {left: -11%;}
+	.common .headline-landing {padding-top: 150px;width: 100%;}
+	.common .headline-landing p {width: 100%;}
+	.onpageheader .logo .logotop {background-size: 125px auto;margin-top: 0px;}
+	.onpageheader .logo {height: 87px;}
+	.onpageheader .logo .logotoppage {background-size: 125px auto;margin-top: 0px;}
+	.common .room-thumb {margin-top: 10px;}
+	.room-landing .room-thumb h3 {padding-bottom: 8px;margin-top: 20px;}
+	.room-landing .room-thumb h4 {line-height: 32px;font-size: 23px;padding: 5px 10px 0px 10px;letter-spacing: 1px;word-spacing: 1px;}
+	.common.room-landing .presdtrshial {width: 100%;}
+	.gap-30 {min-height: 15px;}
+	.roomtag {padding: 35px 20px;}
+	.pageslider .flex-control-nav {display: none;}
+	.common .room-amenities {padding: 35px 0px;}
+	.common .room-amenities .prime-features {padding: 0%;}
+	.common .room-amenities .prime-features .istruments h4 {padding-bottom: 0px;}
+	.video-holder {width: 100%; height: 100%;}
+	.common .page-rooms {margin: 20px 0px;}
+	.common .page-rooms h5 {margin-bottom: 20px; font-size: 25px;}
+	.common .room-amenities .prime-features .istruments ul {padding-bottom: 20px;}
+	.roomtag .roomtxt h2::after { position: absolute; left: -6px; top: 12px; width: 40px;}
+	.banner-holder .pageslider {margin-bottom: 15px;}
+	.mfp-iframe-scaler iframe { height: 55% !important; }
+	.on990 {margin-bottom: 20px;}
+	#filters li {margin: 1% 0%;}
+	.room-thumb .wellnesscontent {padding-left: 10px;padding-top: 15px;}
+	.room-thumb .wellnesscontent ul.wellness-vtg li {width: 65px;margin-right: 10px;}
+	.room-thumb .wellnesscontent ul.wellness-vtg li a .vt {background-size: 50px 55px;}
+	.room-thumb .wellnesscontent ul.wellness-vtg li a:hover .vt {background-size: 50px 55px;}
+	.room-thumb .wellnesscontent ul.wellness-vtg li a .pg {background-size: 50px 55px;}
+	.room-thumb .wellnesscontent ul.wellness-vtg li a:hover .pg {background-size: 50px 55px;}
+	.footer p.copyright {padding-left: 0px;}
+	p.copyright span {display: inline-block;}
+	.footer ul.address {margin-top: 5px;margin-left: 0px;text-align: left;}
+	.footer ul.footer-ul {text-align: left;}
+
+
+}
+
+/*iphone 4*/
+@media only screen and (min-width: 320px) and (max-width: 390px) {
+ .footer ul.footer-ul {text-align: left;}
+ .footer p.copyright {   padding-left: 0px;}
+ p.copyright span {display: inline-block;}
+ .footer ul.address li {font-size: 13px;}
+ .footer.inner {text-align: left!important;}
+ .footer ul.apps { margin-left: 0px;}
+ .footer ul.address { margin-left: 7px;text-align: left;}
+}
+/*iphone 6*/
+/*@media only screen and (min-width: 371px) and (max-width: 390px) {
+
+
+}
+
+ Mobile Portrait
+------------------------- 
+/*Special for iphone 5 || while 6 is good*/
+/*@media only screen and (min-width: 300px) and (max-width: 370px) {*/
+
+/*}
