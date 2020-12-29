@@ -38,6 +38,7 @@ Route::group(['prefix' => 'dashboard', 'middleware' => ['web', 'auth']], functio
     Route::group(['prefix' => 'administration'], function() {
        Route::resources([
            'users' => UserController::class,
+           'menus' => \App\Http\Controllers\Dashboard\MenuController::class,
            'roles' => \App\Http\Controllers\Dashboard\RoleController::class,
            'settings' => SettingController::class
        ]);

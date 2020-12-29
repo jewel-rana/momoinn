@@ -12,7 +12,7 @@
         </div>
 
         <div class="content">
-            <form method="POST" action="{{ route('banners.store') }}" enctype="multipart/form-data">
+            <form method="POST" action="{{ route('restaurants.store') }}" enctype="multipart/form-data">
                 @csrf
                 <div class="row">
                     <div class="col-7">
@@ -31,8 +31,8 @@
                     </div>
                     <div class="col-5">
                         <div class="form-group">
-                            <label for="title">Upload Banner</label>
-                            <input type="file" name="banner" class="form-control form-control-file" value="{{ old('attachment') }}">
+                            <label for="title">Thumbnail</label>
+                            <input type="file" name="attachment" class="form-control form-control-file" value="{{ old('attachment') }}">
                         </div>
                     </div>
                 </div>

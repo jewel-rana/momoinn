@@ -10,7 +10,7 @@
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('restaurants.index') }}">
                     <span data-feather="box"></span>
-                    Rooms &amp; Suits
+                    Rooms &amp; Suites
                 </a>
             </li>
             <li class="nav-item">

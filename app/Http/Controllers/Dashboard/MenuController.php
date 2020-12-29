@@ -14,7 +14,7 @@ class MenuController extends Controller
      */
     public function index()
     {
-        //
+        return view('dashboard.menu.index')->withTitle('Menus');
     }
 
     /**
@@ -24,7 +24,7 @@ class MenuController extends Controller
      */
     public function create()
     {
-        //
+        return view('dashboard.menu.create')->withTitle('Add new menu');
     }
 
     /**
@@ -39,17 +39,6 @@ class MenuController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
@@ -57,7 +46,7 @@ class MenuController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('dashboard.menu.edit')->withTitle('Edit menu');
     }
 
     /**

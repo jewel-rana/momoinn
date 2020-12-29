@@ -6,7 +6,7 @@
             <div class="btn-toolbar mb-2 mb-md-0">
                 <a href="{{ route('facilities.create', ['type' => $type]) }}" type="button" class="btn btn-sm btn-outline-secondary">
                     <span data-feather="plus"></span>
-                    Add new banner
+                    Add new {{ str_replace('-', ' ', $type) }}
                 </a>
             </div>
         </div>
