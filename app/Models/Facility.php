@@ -9,4 +9,17 @@ class Facility extends Model
 {
     use HasFactory;
     protected $fillable = ['title', 'description', 'type', 'thumbnail', 'user_id'];
+
+    public static function boot()
+    {
+        parent::boot();
+        static::deleting(function($property) {
+        });
+
+        static::creating(function($property) {
+        });
+
+        static::updating(function($property) {
+        });
+    }
 }
