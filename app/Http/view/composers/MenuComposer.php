@@ -34,7 +34,7 @@ class MenuComposer
     public function compose(View $view)
     {
         $view->with([
-            'menus' => $this->areas->getNested()
+            'menus' => $this->menus->getNested()
         ]);
     }
 }

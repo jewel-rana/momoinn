@@ -6,6 +6,7 @@ namespace App\Repositories;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\Cache;
 use Jolzatra\Repository\Interfaces\MerchantRepositoryInterface;
 
 class MenuRepository extends BaseRepository implements MerchantRepositoryInterface
@@ -17,7 +18,9 @@ class MenuRepository extends BaseRepository implements MerchantRepositoryInterfa
 
     public function all(): Collection
     {
-        return parent::all();
+        return Cache::rememberForever('menus', function() {
+            return parent::all();
+        });
     }
 
     public function create(array $data)

@@ -16,6 +16,6 @@ class Menus
 
     public function getNested()
     {
-        return $this->menu->all();
+        return $this->menu->all()->groupBy('parent_id')->sortDesc('position');
     }
 }

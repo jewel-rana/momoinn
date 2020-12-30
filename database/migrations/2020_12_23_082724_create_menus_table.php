@@ -20,6 +20,7 @@ class CreateMenusTable extends Migration
             $table->string('description')->nullable();
             $table->string('menu_class')->nullable();
             $table->string('menu_icon')->nullable();
+            $table->bigInteger('parent_id')->default(0);
             $table->integer('position')->default(99);
             $table->string('meta_title')->nullable();
             $table->text('meta_description')->nullable();
