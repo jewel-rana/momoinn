@@ -140,6 +140,6 @@ class FacilityController extends Controller
         if($facility->delete()) {
 
         }
-        return redirect()->back()->with('success', 'Banner successfully deleted');
+        return redirect()->back()->with('success', 'Your item successfully deleted');
     }
 }

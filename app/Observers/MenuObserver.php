@@ -3,9 +3,14 @@
 namespace App\Observers;
 
 use App\Models\Menu;
+use Illuminate\Support\Facades\Cache;
 
 class MenuObserver
 {
+    public function __construct()
+    {
+        Cache::forget('menus');
+    }
     /**
      * Handle the Menu "created" event.
      *

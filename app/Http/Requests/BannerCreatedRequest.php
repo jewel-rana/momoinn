@@ -26,7 +26,7 @@ class BannerCreatedRequest extends FormRequest
         return [
             'title' => 'bail|required|string|max:191',
             'description' => 'bail|nullable|string|max:500',
-            'banner' => 'bail|required|mimes:jpeg,png,jpg,gif,svg|max:2048|dimensions:min_width=460,min_height=340'
+            'banner' => 'bail|required|mimes:jpeg,png,jpg,gif,svg|max:2048|dimensions:min_width=1920,min_height=1000'
         ];
     }
 }
