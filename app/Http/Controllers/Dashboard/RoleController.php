@@ -3,11 +3,15 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\RoleCreatedRequest;
+use App\Http\Requests\RoleUpdatedRequest;
 use Illuminate\Http\Request;
 use Spatie\Permission\Models\Role;
 
 class RoleController extends Controller
 {
+    private $roles;
+
     /**
      * Display a listing of the resource.
      *
@@ -35,9 +39,14 @@ class RoleController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(RoleCreatedRequest $request)
     {
-        //
+        try {
+            $this->roles->create($request->all());
+        } catch (\Exception $exception) {
+
+        }
+        return redirect()->back();
     }
 
     /**
@@ -69,9 +78,14 @@ class RoleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(RoleUpdatedRequest $request, $id)
     {
-        //
+        try {
+            $this->roles->create($request->all());
+        } catch (\Exception $exception) {
+
+        }
+        return redirect()->back();
     }
 
     /**
@@ -80,8 +94,9 @@ class RoleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Role $role)
     {
-        //
+        $role->delete();
+        return redirect()->back();
     }
 }

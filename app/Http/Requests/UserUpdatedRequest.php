@@ -13,7 +13,7 @@ class UserUpdatedRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,12 @@ class UserUpdatedRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'branch_id' => 'bail|required|integer|exists:branches,id',
+            'name' => 'bail|required|string|max:191',
+            'email' => 'bail|required|unique:users,email,' . $this->user,
+            'mobile' => 'bail|required|regex:/^(01){1}[3456789]{1}(\d){8}$/|unique:users,mobile,' . $this->user,
+            'password' => 'bail|nullable|same:password_confirm|min:8|max:32',
+            'role' => 'bail|required|integer|exists:roles,id'
         ];
     }
 }

@@ -13,7 +13,7 @@ class UserCreatedRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,14 @@ class UserCreatedRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'branch_id' => 'bail|required|numeric|exists:branches,id',
+            'name' => 'bail|required|string|max:191',
+            'email' => 'bail|required|unique:users,email',
+            'mobile' => 'bail|required|regex:/^(01){1}[3456789]{1}(\d){8}$/|unique:users,mobile',
+            'password' => 'bail|required|same:password_confirm|min:8|max:32',
+            'password_confirm' => 'required',
+            'role' => 'bail|required|integer',
+            'designation_id' => 'bail|required|integer'
         ];
     }
 }
