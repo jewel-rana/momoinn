@@ -73,9 +73,9 @@ class FacilityController extends Controller
             ]);
             $this->facilities->create($request->all());
         } catch (\Exception $exception) {
-            dd($exception->getMessage());
+            session()->flash('error', $exception->getMessage());
         }
-        return redirect()->route('facilities.index', ['type' => $request->type])->with('success', 'success');
+        return redirect()->route('facilities.index', ['type' => $request->type]);
     }
 
     /**
@@ -124,9 +124,9 @@ class FacilityController extends Controller
             }
             $this->facilities->update($request->all(), $id);
         } catch (\Exception $exception) {
-            dd($exception->getMessage());
+            session()->flash('error', $exception->getMessage());
         }
-        return redirect()->route('facilities.index', ['type' => $request->type])->with('success', 'success');
+        return redirect()->route('facilities.index', ['type' => $request->type]);
     }
 
     /**

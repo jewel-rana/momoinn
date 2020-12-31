@@ -53,7 +53,7 @@ class RoomTypeController extends Controller
             $data = ['error' => $exception->getMessage()];
         }
 
-        return redirect()->route('room_types.index')->with('success', 'success');
+        return redirect()->route('room_types.index');
     }
 
     /**
@@ -94,7 +94,7 @@ class RoomTypeController extends Controller
             $data = ['error' => $exception->getMessage()];
         }
 
-        return redirect()->route('room_types.index')->with('success', 'success');
+        return redirect()->route('room_types.index');
     }
 
     /**

@@ -14,7 +14,7 @@ class CategoryObserver
      */
     public function created(Category $category)
     {
-        //
+        session()->flash('success', 'Category successfully created');
     }
 
     /**
@@ -25,7 +25,7 @@ class CategoryObserver
      */
     public function updated(Category $category)
     {
-        //
+        session()->flash('success', 'Category successfully updated');
     }
 
     /**
@@ -36,7 +36,7 @@ class CategoryObserver
      */
     public function deleted(Category $category)
     {
-        //
+        session()->flash('success', 'Category successfully deleted');
     }
 
     /**
@@ -47,7 +47,7 @@ class CategoryObserver
      */
     public function restored(Category $category)
     {
-        //
+        session()->flash('success', 'Category successfully restored');
     }
 
     /**
@@ -58,6 +58,6 @@ class CategoryObserver
      */
     public function forceDeleted(Category $category)
     {
-        //
+        session()->flash('success', 'Category permanently deleted');
     }
 }

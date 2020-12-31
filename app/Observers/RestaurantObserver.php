@@ -14,7 +14,7 @@ class RestaurantObserver
      */
     public function created(Restaurant $restaurant)
     {
-        //
+        session()->flash('success', 'Room & Suites successfully created');
     }
 
     /**
@@ -25,7 +25,7 @@ class RestaurantObserver
      */
     public function updated(Restaurant $restaurant)
     {
-        //
+        session()->flash('success', 'Room & Suites successfully updated');
     }
 
     /**
@@ -36,7 +36,7 @@ class RestaurantObserver
      */
     public function deleted(Restaurant $restaurant)
     {
-        //
+        session()->flash('success', 'Room & Suites successfully deleted');
     }
 
     /**
@@ -47,7 +47,7 @@ class RestaurantObserver
      */
     public function restored(Restaurant $restaurant)
     {
-        //
+        session()->flash('success', 'Room & Suites successfully restored');
     }
 
     /**
@@ -58,6 +58,6 @@ class RestaurantObserver
      */
     public function forceDeleted(Restaurant $restaurant)
     {
-        //
+        session()->flash('success', 'Room & Suites permanently deleted');
     }
 }

@@ -14,7 +14,7 @@ class UserObserver
      */
     public function created(User $user)
     {
-        //
+        session()->flash('success', 'User successfully created');
     }
 
     /**
@@ -25,7 +25,7 @@ class UserObserver
      */
     public function updated(User $user)
     {
-        //
+        session()->flash('success', 'User successfully updated');
     }
 
     /**
@@ -36,7 +36,7 @@ class UserObserver
      */
     public function deleted(User $user)
     {
-        //
+        session()->flash('success', 'User successfully deleted');
     }
 
     /**
@@ -47,7 +47,7 @@ class UserObserver
      */
     public function restored(User $user)
     {
-        //
+        session()->flash('success', 'User successfully restored');
     }
 
     /**
@@ -58,6 +58,6 @@ class UserObserver
      */
     public function forceDeleted(User $user)
     {
-        //
+        session()->flash('success', 'User permanently deleted');
     }
 }

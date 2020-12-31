@@ -14,7 +14,7 @@ class CouponObserver
      */
     public function created(Coupon $coupon)
     {
-        //
+        session()->flash('success', 'Coupon successfully created');
     }
 
     /**
@@ -25,7 +25,7 @@ class CouponObserver
      */
     public function updated(Coupon $coupon)
     {
-        //
+        session()->flash('success', 'Coupon successfully updated');
     }
 
     /**
@@ -36,7 +36,7 @@ class CouponObserver
      */
     public function deleted(Coupon $coupon)
     {
-        //
+        session()->flash('success', 'Coupon successfully deleted');
     }
 
     /**
@@ -47,7 +47,7 @@ class CouponObserver
      */
     public function restored(Coupon $coupon)
     {
-        //
+        session()->flash('success', 'Coupon successfully restored');
     }
 
     /**
@@ -58,6 +58,6 @@ class CouponObserver
      */
     public function forceDeleted(Coupon $coupon)
     {
-        //
+        session()->flash('success', 'Coupon permanently deleted');
     }
 }

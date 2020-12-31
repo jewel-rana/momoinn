@@ -19,7 +19,7 @@ class MenuObserver
      */
     public function created(Menu $menu)
     {
-        //
+        session()->flash('success', 'Menu successfully created');
     }
 
     /**
@@ -30,7 +30,7 @@ class MenuObserver
      */
     public function updated(Menu $menu)
     {
-        //
+        session()->flash('success', 'Menu successfully updated');
     }
 
     /**
@@ -41,7 +41,7 @@ class MenuObserver
      */
     public function deleted(Menu $menu)
     {
-        //
+        session()->flash('success', 'Menu successfully deleted');
     }
 
     /**
@@ -52,7 +52,7 @@ class MenuObserver
      */
     public function restored(Menu $menu)
     {
-        //
+        session()->flash('success', 'Menu successfully restored');
     }
 
     /**
@@ -63,6 +63,6 @@ class MenuObserver
      */
     public function forceDeleted(Menu $menu)
     {
-        //
+        session()->flash('success', 'Menu permanently deleted');
     }
 }

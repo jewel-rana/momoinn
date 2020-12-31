@@ -44,7 +44,7 @@ class RoleController extends Controller
         try {
             $this->roles->create($request->all());
         } catch (\Exception $exception) {
-
+            session()->flash('error', $exception->getMessage());
         }
         return redirect()->back();
     }
@@ -83,7 +83,7 @@ class RoleController extends Controller
         try {
             $this->roles->create($request->all());
         } catch (\Exception $exception) {
-
+            session()->flash('error', $exception->getMessage());
         }
         return redirect()->back();
     }

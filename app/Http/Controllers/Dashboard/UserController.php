@@ -52,6 +52,7 @@ class UserController extends Controller
             $role = Role::where('id', $request->role_id)->first();
             $user->assignRole($role);
         } catch (\Exception $e) {
+            session()->flash('error', $e->getMessage());
         }
         return redirect()->route('users.index');
     }
@@ -106,6 +107,7 @@ class UserController extends Controller
             $role = Role::where('id', $request->role_id)->first();
             $user->assignRole($role);
         } catch (\Exception $e) {
+            session()->flash('error', $e->getMessage());
         }
         return redirect()->route('users.index');
     }

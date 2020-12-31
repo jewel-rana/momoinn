@@ -14,7 +14,7 @@ class BannerObserver
      */
     public function created(Banner $banner)
     {
-        //
+        session()->flash('success', 'Banner successfully created');
     }
 
     /**
@@ -27,6 +27,7 @@ class BannerObserver
     {
         unlink(public_path($banner->attachment));
         unlink(public_path($banner->thumbnail));
+        session()->flash('success', 'Banner successfully updated');
     }
 
     /**
@@ -39,6 +40,7 @@ class BannerObserver
     {
         unlink(public_path($banner->attachment));
         unlink(public_path($banner->thumbnail));
+        session()->flash('success', 'Banner successfully deleted');
     }
 
     /**
@@ -49,7 +51,7 @@ class BannerObserver
      */
     public function restored(Banner $banner)
     {
-        //
+        session()->flash('success', 'Banner successfully restored');
     }
 
     /**
@@ -62,5 +64,6 @@ class BannerObserver
     {
         unlink(public_path($banner->attachment));
         unlink(public_path($banner->thumbnail));
+        session()->flash('success', 'Banner permanently deleted');
     }
 }

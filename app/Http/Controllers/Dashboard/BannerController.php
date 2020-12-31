@@ -65,12 +65,11 @@ class BannerController extends Controller
                 ]);
             }
             $this->banners->create($request->all());
-            $data = ['success' => 'Banner successfully created'];
         } catch (\Exception $exception) {
-            $data = ['error' => $exception->getMessage()];
+            session()->flash('error', $exception->getMessage());
         }
 
-        return redirect()->route('banners.index')->with('success', 'success');
+        return redirect()->route('banners.index');
     }
 
     /**
@@ -121,13 +120,11 @@ class BannerController extends Controller
                 ]);
             }
             $this->banners->update($request->all(), $id);
-            $data = ['success' => 'Banner successfully updated'];
         } catch (\Exception $exception) {
-            dd($exception->getMessage());
-            $data = ['error' => $exception->getMessage()];
+            session()->flash('error', $exception->getMessage());
         }
 
-        return redirect()->route('banners.index')->with('success', 'success');
+        return redirect()->route('banners.index');
     }
 
     /**

@@ -14,7 +14,7 @@ class FacilityObserver
      */
     public function created(Facility $facility)
     {
-        //
+        session()->flash('success', ucfirst(str_replace('-', ' ', $facility->type)) . ' successfully created');
     }
 
     /**
@@ -25,7 +25,7 @@ class FacilityObserver
      */
     public function updated(Facility $facility)
     {
-        //
+        session()->flash('success', ucfirst(str_replace('-', ' ', $facility->type)) . ' successfully updated');
     }
 
     /**
@@ -36,7 +36,7 @@ class FacilityObserver
      */
     public function deleted(Facility $facility)
     {
-        //
+        session()->flash('success', ucfirst(str_replace('-', ' ', $facility->type)) . ' successfully deleted');
     }
 
     /**
@@ -47,7 +47,7 @@ class FacilityObserver
      */
     public function restored(Facility $facility)
     {
-        //
+        session()->flash('success', ucfirst(str_replace('-', ' ', $facility->type)) . ' successfully restored');
     }
 
     /**
@@ -58,6 +58,6 @@ class FacilityObserver
      */
     public function forceDeleted(Facility $facility)
     {
-        //
+        session()->flash('success', ucfirst(str_replace('-', ' ', $facility->type)) . ' permanently deleted');
     }
 }

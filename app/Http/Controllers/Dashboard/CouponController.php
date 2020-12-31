@@ -56,9 +56,9 @@ class CouponController extends Controller
             ]);
             $this->coupon->create($request->all());
         } catch (\Exception $exception) {
-
+            session()->flash('error', $exception->getMessage());
         }
-        return redirect()->route('coupons.index')->with('success', 'success');
+        return redirect()->route('coupons.index');
     }
 
     /**
@@ -100,9 +100,9 @@ class CouponController extends Controller
             ]);
             $this->coupon->update($request->all(), $id);
         } catch (\Exception $exception) {
-
+            session()->flash('error', $exception->getMessage());
         }
-        return redirect()->route('coupons.index')->with('success', 'success');
+        return redirect()->route('coupons.index');
     }
 
     /**

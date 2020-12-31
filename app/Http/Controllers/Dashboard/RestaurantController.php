@@ -65,10 +65,11 @@ class RestaurantController extends Controller
             }
             $this->restaurants->update($request->all(), $id);
         } catch (\Exception $exception) {
-            dd($exception->getMessage());
+            session()->flash('error', $exception->getMessage());
+            return redirect()->back();
         }
 
-        return redirect()->route('restaurants.index')->with('success', 'success');
+        return redirect()->route('restaurants.index');
     }
 
     /**
@@ -102,7 +103,29 @@ class RestaurantController extends Controller
      */
     public function update(RestaurantUpdatedRequest $request, $id)
     {
-        //
+        try {
+            if($request->has('attachment')) {
+                $filename = time() . '.' . $request->attachment->getClientOriginalExtension();
+                $destinationPath = public_path('uploads/banner/');
+                $img = Image::make($request->attachment->getRealPath());
+                $img->resize(594, 620, function ($constraint) {
+                    $constraint->aspectRatio();
+                })->save($destinationPath . '/' . $filename);
+
+                $img->resize(60, 40)->save($destinationPath . '/thumbnail/' . $filename);
+
+                $request->merge([
+                    'attachment' => '/uploads/banner/' . $filename,
+                    'thumbnail' => '/uploads/banner/thumbnail/' . $filename
+                ]);
+            }
+            $this->restaurants->update($request->all(), $id);
+        } catch (\Exception $exception) {
+            session()->flash('error', $exception->getMessage());
+            return redirect()->back();
+        }
+
+        return redirect()->route('restaurants.index');
     }
 
     /**
