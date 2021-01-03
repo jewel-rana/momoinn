@@ -20,6 +20,15 @@
                             <label for="title">Title</label>
                             <input type="text" name="title" class="form-control" placeholder="Title" value="{{ old('title') }}">
                         </div>
+                        <div class="form-group mb-4">
+                            <label for="title">Room Type</label>
+                            <select name="room_type_id" class="form-control">
+                                <option value="">Choose</option>
+                                @foreach($room_type_dropdowns as $key => $type)
+                                <option value="{{$key}}">{{ $type }}</option>
+                                @endforeach
+                            </select>
+                        </div>
                         <div class="form-group">
                             <label for="title">Description</label>
                             <textarea type="text" name="description" rows="8" placeholder="Description" class="form-control">{{ old('description') }}</textarea>

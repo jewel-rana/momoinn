@@ -16,7 +16,7 @@ class Menus
 
     public function getNested()
     {
-        return $this->menu->all()->groupBy('parent_id')->sortDesc('position');
+        return $this->menu->all()->groupBy('parent_id');
     }
 
     public function create(array $data)

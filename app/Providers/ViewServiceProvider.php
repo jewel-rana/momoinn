@@ -2,6 +2,10 @@
 
 namespace App\Providers;
 
+use App\Http\View\Composers\CategoryComposer;
+use App\Http\View\Composers\MenuComposer;
+use App\Http\View\Composers\RoleComposer;
+use App\Http\View\Composers\RoomTypeComposer;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
@@ -15,13 +19,16 @@ class ViewServiceProvider extends ServiceProvider
     public function register()
     {
         View::composer(
-            '*', 'App\Http\View\Composers\CategoryComposer'
+            '*', CategoryComposer::class
         );
         View::composer(
-            '*', 'App\Http\View\Composers\MenuComposer'
+            '*', MenuComposer::class
         );
         View::composer(
-            '*', 'App\Http\View\Composers\RoleComposer'
+            '*', RoleComposer::class
+        );
+        View::composer(
+            '*', RoomTypeComposer::class
         );
     }
 

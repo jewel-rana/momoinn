@@ -10,4 +10,9 @@ class Categories
     {
         $this->category = $category;
     }
+
+    public function getDropdown()
+    {
+        return $this->category->all()->pluck('name', 'id');
+    }
 }

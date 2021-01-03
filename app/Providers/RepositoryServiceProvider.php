@@ -20,11 +20,13 @@ use App\Repositories\Interfaces\MenuRepositoryInterface;
 use App\Repositories\Interfaces\OptionRepositoryInterface;
 use App\Repositories\Interfaces\RestaurantRepositoryInterface;
 use App\Repositories\Interfaces\RoleRepositoryInterface;
+use App\Repositories\Interfaces\RoomTypeRepositoryInterface;
 use App\Repositories\Interfaces\UserRepositoryInterface;
 use App\Repositories\MenuRepository;
 use App\Repositories\OptionRepository;
 use App\Repositories\RestaurantRepository;
 use App\Repositories\RoleRepository;
+use App\Repositories\RoomTypeRepository;
 use App\Repositories\UserRepository;
 use Illuminate\Support\ServiceProvider;
 
@@ -49,6 +51,7 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->bind(CouponRepositoryInterface::class, CouponRepository::class);
         $this->app->bind(FacilityRepositoryInterface::class, FacilityRepository::class);
         $this->app->bind(RoleRepositoryInterface::class, RoleRepository::class);
+        $this->app->bind(RoomTypeRepositoryInterface::class, RoomTypeRepository::class);
     }
 
     /**
