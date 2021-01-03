@@ -54,7 +54,8 @@ class RoomTypeController extends Controller
             ]);
             $this->roomType->create($request->all());
         } catch (\Exception $exception) {
-            dd($exception->getMessage());
+            session()->flash('error', $exception->getMessage());
+            return redirect()->back()->withInput($request->all());
         }
 
         return redirect()->route('room_types.index');
@@ -97,7 +98,8 @@ class RoomTypeController extends Controller
             ]);
             $this->roomType->update($request->all(), $id);
         } catch (\Exception $exception) {
-            $data = ['error' => $exception->getMessage()];
+            session()->flash('error', $exception->getMessage());
+            return redirect()->back()->withInput($request->all());
         }
 
         return redirect()->route('room_types.index');

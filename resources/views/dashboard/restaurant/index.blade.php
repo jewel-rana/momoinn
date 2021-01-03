@@ -17,22 +17,22 @@
                 <tr>
                     <th>#</th>
                     <th>Title</th>
-                    <th>Category</th>
+                    <th>Room Type</th>
                     <th>Sell price</th>
                     <th>Offer price</th>
                     <th><i data-feather="tool"></i></th>
                 </tr>
                 </thead>
                 <tbody>
-                @foreach($restaurants as $k => $resturant)
+                @foreach($restaurants as $k => $restaurant)
                 <tr>
                     <td>{{ $k + 1 }}</td>
-                    <td>{{ $resturant->title }}</td>
-                    <td>{{ $resturant->category->name }}</td>
-                    <td>{{ $resturant->sell_price }}</td>
-                    <td>{{ $resturant->offer_price }}</td>
+                    <td>{{ $restaurant->title }}</td>
+                    <td>{{ $restaurant->roomType->name }}</td>
+                    <td>{{ $restaurant->sell_price }}</td>
+                    <td>{{ $restaurant->offer_price }}</td>
                     <td>
-                        <a class="btn btn-secondary" href="{{ route('restaurants.edit', $resturant->id) }}">Edit</a>
+                        <a class="btn btn-secondary" href="{{ route('restaurants.edit', $restaurant->id) }}">Edit</a>
                     </td>
                 </tr>
                 @endforeach

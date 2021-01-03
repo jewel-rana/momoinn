@@ -40,6 +40,22 @@
                     </div>
                     <div class="col-5">
                         <div class="form-group">
+                            <label>Floor No.</label>
+                            <input type="number" name="floor_no" class="form-control" value="{{old('floor_no', 1)}}">
+                        </div>
+                        <div class="form-group">
+                            <label>Room No.</label>
+                            <input type="number" name="room_no" class="form-control" value="{{old('room_no', 1)}}">
+                        </div>
+                        <div class="form-group">
+                            <label>Sell Price</label>
+                            <input type="number" name="sell_price" class="form-control" value="{{old('sell_price')}}">
+                        </div>
+                        <div class="form-group">
+                            <label>Offer Price</label>
+                            <input type="number" name="offer_price" class="form-control" value="{{old('offer_price')}}">
+                        </div>
+                        <div class="form-group">
                             <label for="title">Thumbnail</label>
                             <input type="file" name="attachment" class="form-control form-control-file" value="{{ old('attachment') }}">
                         </div>

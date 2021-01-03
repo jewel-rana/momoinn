@@ -63,10 +63,11 @@ class RestaurantController extends Controller
                     'thumbnail' => '/uploads/banner/thumbnail/' . $filename
                 ]);
             }
-            $this->restaurants->update($request->all(), $id);
+            $request->merge(['user_id' => auth()->user()->id]);
+            $this->restaurants->create($request->all());
         } catch (\Exception $exception) {
-            session()->flash('error', $exception->getMessage());
-            return redirect()->back();
+            session()->flash('error', $exception->getMessage() . $exception->getFile() . $exception->getLine());
+            return redirect()->back()->withInput($request->all());
         }
 
         return redirect()->route('restaurants.index');
