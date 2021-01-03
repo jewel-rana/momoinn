@@ -35,7 +35,8 @@ Route::group(['prefix' => 'dashboard', 'middleware' => ['web', 'auth']], functio
         'restaurants' => \App\Http\Controllers\Dashboard\RestaurantController::class,
         'reports' => \App\Http\Controllers\Dashboard\ReportController::class,
         'coupons' => CouponController::class,
-        'facilities' => \App\Http\Controllers\Dashboard\FacilityController::class
+        'facilities' => \App\Http\Controllers\Dashboard\FacilityController::class,
+        'room_types' => \App\Http\Controllers\Dashboard\RoomTypeController::class
     ]);
 
     Route::group(['prefix' => 'administration'], function() {

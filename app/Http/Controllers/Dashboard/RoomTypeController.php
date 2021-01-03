@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\RoomTypeCreateRequest;
+use App\Http\Requests\RoomTypeUpdateRequest;
 use App\Models\RoomType;
 use App\Repositories\Interfaces\RoomTypeRepositoryInterface;
 use Illuminate\Http\Request;
@@ -24,8 +26,8 @@ class RoomTypeController extends Controller
      */
     public function index()
     {
-        $room_types = RoomType::paginate(15);
-        return view('dashboard.restaurant.type.index', compact('room_types'))->withTitle('Room Types');
+        $roomtypes = RoomType::paginate(15);
+        return view('dashboard.roomtype.index', compact('roomtypes'))->withTitle('Room Types');
     }
 
     /**
@@ -35,7 +37,7 @@ class RoomTypeController extends Controller
      */
     public function create()
     {
-        return view('dashboard.restaurant.type.create', compact('room_types'))->withTitle('Add new type');
+        return view('dashboard.roomtype.create')->withTitle('Add new type');
     }
 
     /**
@@ -44,13 +46,15 @@ class RoomTypeController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(RoomTypeCreateRequest $request)
     {
         try {
+            $request->merge([
+                'slug' => ($request->type_slug) ? str_replace(' ', '-', strtolower($request->type_slug)) : str_replace(' ', '-', strtolower($request->name))
+            ]);
             $this->roomType->create($request->all());
-            $data = ['success' => 'Room type successfully created'];
         } catch (\Exception $exception) {
-            $data = ['error' => $exception->getMessage()];
+            dd($exception->getMessage());
         }
 
         return redirect()->route('room_types.index');
@@ -73,9 +77,9 @@ class RoomTypeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(RoomType $room_type)
     {
-        return view('dashboard.restaurant.type.edit', compact('room_types'))->withTitle('Update room type');
+        return view('dashboard.roomtype.edit', compact('room_type'))->withTitle('Update room type');
     }
 
     /**
@@ -85,11 +89,13 @@ class RoomTypeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(RoomTypeUpdateRequest $request, $id)
     {
         try {
+            $request->merge([
+                'slug' => ($request->type_slug) ? str_replace(' ', '-', strtolower($request->type_slug)) : str_replace(' ', '-', strtolower($request->name))
+            ]);
             $this->roomType->update($request->all(), $id);
-            $data = ['success' => 'Room type successfully updated'];
         } catch (\Exception $exception) {
             $data = ['error' => $exception->getMessage()];
         }
