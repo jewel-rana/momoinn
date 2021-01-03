@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
+use App\Models\Booking;
 use App\Models\Customer;
 use Illuminate\Http\Request;
 
@@ -21,12 +22,12 @@ class AjaxBookingController extends Controller
             $columns = $request->get('columns');
             $column = $columns[$request->input('order.0.column')]['data'];
             $order = $request->input('order.0.dir');
-            $query = Customer::with(['user');
+            $query = Booking::with(['customer');
 
             //filter by keyword
             if (isset($_GET['keyword']) && $_GET['keyword'] != null) {
                 $keyword = $_GET['keyword'];
-                $query->WhereHas('user', function ($q) use ($keyword) {
+                $query->WhereHas('customer', function ($q) use ($keyword) {
                     $q->where('mobile', 'LIKE', "%$keyword%");
                     $q->orWhere('name', 'LIKE', "%$keyword%");
                     $q->orWhere('email', 'LIKE', "%$keyword%");
