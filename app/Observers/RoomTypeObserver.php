@@ -3,9 +3,15 @@
 namespace App\Observers;
 
 use App\Models\RoomType;
+use Illuminate\Support\Facades\Cache;
 
 class RoomTypeObserver
 {
+    public function __construct()
+    {
+        Cache::forget('room_types');
+    }
+
     /**
      * Handle the RoomType "created" event.
      *

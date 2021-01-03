@@ -26,8 +26,8 @@ class MenuController extends Controller
      */
     public function index()
     {
-        $menus = Menu::all();
-        return view('dashboard.menu.index', compact('menus'))->withTitle('Menus');
+        $menu_items = Menu::all();
+        return view('dashboard.menu.index', compact('menu_items'))->withTitle('Menus');
     }
 
     /**

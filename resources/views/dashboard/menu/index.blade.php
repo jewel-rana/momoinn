@@ -23,7 +23,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                @foreach($menus as $key => $menu)
+                @foreach($menu_items as $key => $menu)
                     <tr>
                         <td>{{$key + 1}}</td>
                         <td>{{ $menu->name }}</td>
@@ -39,7 +39,7 @@
                         </td>
                     </tr>
                 @endforeach
-                @if(!$menus->count())
+                @if(!$menu_items->count())
                     <tr>
                         <td colspan="5">No menu found</td>
                     </tr>
