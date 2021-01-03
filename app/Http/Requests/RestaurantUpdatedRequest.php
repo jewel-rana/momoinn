@@ -13,7 +13,7 @@ class RestaurantUpdatedRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return auth()->check();
     }
 
     /**
@@ -24,7 +24,13 @@ class RestaurantUpdatedRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'room_type_id' => 'bail|required|integer|exists:room_types,id',
+            'title' => 'bail|required|string|max:191',
+            'description' => 'bail|required',
+            'room_no' => 'bail|required|string',
+            'floor_no' => 'bail|required|integer',
+            'sell_price' => 'bail|required|integer',
+            'offer_price' => 'bail|required|integer'
         ];
     }
 }

@@ -42,7 +42,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        Paginator::useBootstrap();
         Banner::observe(BannerObserver::class);
         Booking::observe(BookingObserver::class);
         Coupon::observe(CouponObserver::class);
@@ -52,5 +51,6 @@ class AppServiceProvider extends ServiceProvider
         Gallery::observe(GalleryObserver::class);
         Menu::observe(MenuObserver::class);
         User::observe(UserObserver::class);
+        Paginator::useBootstrap();
     }
 }

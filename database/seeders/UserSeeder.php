@@ -16,12 +16,15 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
+        $role = Role::where('name', 'admin')->first();
         $user = User::create([
             'name' => 'Super Admin',
             'email' => 'admin@email.com',
-            'password' => Hash::make('123456789')
+            'password' => Hash::make('123456789'),
+            'mobile' => '01911785317',
+            'email_verified_at' => now(),
+            'role_id' => $role->id
         ]);
-        $role = Role::where('name', 'admin')->first();
         $user->assignRole($role);
     }
 }

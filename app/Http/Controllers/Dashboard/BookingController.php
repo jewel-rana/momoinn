@@ -14,7 +14,7 @@ class BookingController extends Controller
      */
     public function index()
     {
-        return view('dashboard.booking.index')->withTitle('Manage bookings');
+        return view('dashboard.booking.index')->withTitle('Bookings');
     }
 
     /**

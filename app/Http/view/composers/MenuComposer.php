@@ -1,6 +1,6 @@
 <?php
 
-namespace Larabill\Http\View\Composers;
+namespace App\Http\View\Composers;
 
 
 use App\Services\Menus;

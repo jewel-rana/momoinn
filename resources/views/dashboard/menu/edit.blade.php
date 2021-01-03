@@ -12,21 +12,22 @@
         </div>
 
         <div class="content">
-            <form method="POST" action="{{ route('menus.store') }}" enctype="multipart/form-data">
+            <form method="POST" action="{{ route('menus.update', $menu->id) }}" enctype="multipart/form-data">
                 @csrf
+                @method('PUT')
                 <div class="row">
                     <div class="col-7">
                         <div class="form-group mb-4">
                             <label for="title">Name</label>
-                            <input type="text" name="name" class="form-control" placeholder="Name" value="{{ old('name') }}" required>
+                            <input type="text" name="name" class="form-control" placeholder="Name" value="{{ old('name', $menu->name) }}" required>
                         </div>
                         <div class="form-group mb-4">
                             <label for="title">Menu links</label>
-                            <input type="text" name="slug" placeholder="Menu link" class="form-control" value="{{ old('slug') }}" required>
+                            <input type="text" name="slug" placeholder="Menu link" class="form-control" value="{{ old('slug', $menu->slug) }}" required>
                         </div>
                         <div class="form-group">
                             <label for="title">Description</label>
-                            <textarea type="text" name="description" rows="4" placeholder="Description" class="form-control">{{ old('description') }}</textarea>
+                            <textarea type="text" name="description" rows="4" placeholder="Description" class="form-control">{{ old('description', $menu->description) }}</textarea>
                         </div>
                         <hr>
                         <div class="form-group">
@@ -42,11 +43,11 @@
                         </div>
                         <div class="form-group mb-4">
                             <label for="title">Menu Class</label>
-                            <input type="text" name="menu_class" class="form-control" value="{{ old('menu_class') }}">
+                            <input type="text" name="menu_class" class="form-control" value="{{ old('menu_class', $menu->menu_class) }}">
                         </div>
                         <div class="form-group">
                             <label for="title">Menu order</label>
-                            <input type="number" name="menu_position" class="form-control form-control-file" value="{{ old('menu_position', 0) }}" required>
+                            <input type="number" name="menu_position" class="form-control form-control-file" value="{{ old('menu_position', $menu->menu_position) }}" required>
                         </div>
                     </div>
                 </div>

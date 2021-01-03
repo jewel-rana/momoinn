@@ -14,7 +14,7 @@ class CustomerController extends Controller
      */
     public function index()
     {
-        return view('dashboard.customer.index')->withTitle('Manage customers');
+        return view('dashboard.customer.index')->withTitle('Customers');
     }
 
     /**

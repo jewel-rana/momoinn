@@ -38,6 +38,12 @@
                 </a>
             </li>
             <li class="nav-item">
+                <a class="nav-link" href="{{ route('menus.index') }}">
+                    <span data-feather="layers"></span>
+                    Menus
+                </a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" href="{{ route('banners.index') }}">
                     <span data-feather="layers"></span>
                     Banners

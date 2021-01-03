@@ -20,6 +20,9 @@ class ViewServiceProvider extends ServiceProvider
         View::composer(
             '*', 'App\Http\View\Composers\MenuComposer'
         );
+        View::composer(
+            '*', 'App\Http\View\Composers\RoleComposer'
+        );
     }
 
     /**

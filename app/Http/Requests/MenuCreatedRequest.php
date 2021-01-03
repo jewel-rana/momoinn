@@ -13,7 +13,7 @@ class MenuCreatedRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,12 @@ class MenuCreatedRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name' => 'bail|required|string|max:191',
+            'slug' => 'bail|required|string|max:191',
+            'description' => 'bail|nullable|string|max:255',
+            'menu_class' => 'bail|nullable|string|max:191',
+            'menu_position' => 'bail|required|numeric|min:0|max:99',
+            'parent_id' => 'bail|nullable|numeric|exists:menus,id'
         ];
     }
 }

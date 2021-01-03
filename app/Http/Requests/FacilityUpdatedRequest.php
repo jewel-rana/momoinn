@@ -27,7 +27,7 @@ class FacilityUpdatedRequest extends FormRequest
             'title' => 'bail|required|string|max:191',
             'description' => 'bail|required|max:1500',
             'type' => 'bail|required|in:restaurant,meeting-event,facility',
-            'attachment' => 'bail|required|mimes:jpeg,png,jpg,gif,svg|max:2048|dimensions:min_width=460,min_height=340'
+            'attachment' => 'bail|nullable|mimes:jpeg,png,jpg,gif,svg|max:2048|dimensions:min_width=460,min_height=340'
         ];
     }
 }

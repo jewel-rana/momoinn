@@ -11,19 +11,27 @@
         <div class="table-responsive">
             <ul class="nav nav-tabs" id="myTab" role="tablist">
                 <li class="nav-item" role="presentation">
-                    <a class="nav-link active" id="home-tab" data-bs-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Home</a>
+                    <a class="nav-link active" id="general-tab" data-bs-toggle="tab" href="#general" role="tab" aria-controls="general" aria-selected="true">General</a>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <a class="nav-link" id="profile-tab" data-bs-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Profile</a>
+                    <a class="nav-link" id="header-tab" data-bs-toggle="tab" href="#header" role="tab" aria-controls="header" aria-selected="false">Header</a>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <a class="nav-link" id="contact-tab" data-bs-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Contact</a>
+                    <a class="nav-link" id="homepage-tab" data-bs-toggle="tab" href="#homepage" role="tab" aria-controls="homepage" aria-selected="false">Homepage</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link" id="footer-tab" data-bs-toggle="tab" href="#footer" role="tab" aria-controls="footer" aria-selected="false">Footer</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link" id="payment-tab" data-bs-toggle="tab" href="#payment" role="tab" aria-controls="payment" aria-selected="false">Footer</a>
                 </li>
             </ul>
             <div class="tab-content" id="myTabContent">
-                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">...</div>
-                <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
-                <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
+                <div class="tab-pane fade show active" id="general" role="tabpanel" aria-labelledby="general-tab">...</div>
+                <div class="tab-pane fade" id="header" role="tabpanel" aria-labelledby="header-tab">...</div>
+                <div class="tab-pane fade" id="homepage" role="tabpanel" aria-labelledby="homepage-tab">...</div>
+                <div class="tab-pane fade" id="footer" role="tabpanel" aria-labelledby="footer-tab">...</div>
+                <div class="tab-pane fade" id="payment" role="tabpanel" aria-labelledby="payment-tab">...</div>
             </div>
 
         </div>

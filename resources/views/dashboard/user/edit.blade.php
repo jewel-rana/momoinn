@@ -12,21 +12,22 @@
         </div>
 
         <div class="content">
-            <form method="POST" action="{{ route('users.store') }}" enctype="multipart/form-data">
+            <form method="POST" action="{{ route('users.update', $user->id) }}" enctype="multipart/form-data">
                 @csrf
+                @method('PUT')
                 <div class="row">
                     <div class="col-7">
                         <div class="form-group mb-4">
                             <label for="title">Name</label>
-                            <input type="text" name="name" class="form-control" placeholder="Name" value="{{ old('name') }}">
+                            <input type="text" name="name" class="form-control" placeholder="Name" value="{{ old('name', $user->name) }}">
                         </div>
                         <div class="form-group mb-4">
                             <label for="title">Mobile</label>
-                            <input type="text" name="mobile" class="form-control" placeholder="Mobile" value="{{ old('mobile') }}">
+                            <input type="text" name="mobile" class="form-control" placeholder="Mobile" value="{{ old('mobile', $user->mobile) }}">
                         </div>
                         <div class="form-group mb-4">
                             <label for="title">Email</label>
-                            <input type="email" name="email" class="form-control" placeholder="Email" value="{{ old('email') }}">
+                            <input type="email" name="email" class="form-control" placeholder="Email" value="{{ old('email', $user->email) }}">
                         </div>
                         <div class="form-group mb-4">
                             <label for="title">Password</label>
@@ -41,7 +42,7 @@
                             <select class="form-control" name="role_id" required>
                                 <option value="">Select role</option>
                                 @foreach($roles as $id => $name)
-                                    <option value="{{$id}}" @if(old('role_id') == $id) selected @endif>{{$name}}</option>
+                                    <option value="{{$id}}" @if(old('role_id', $user->role_id) == $id) selected @endif>{{$name}}</option>
                                 @endforeach
                             </select>
                         </div>

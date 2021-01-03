@@ -138,6 +138,6 @@ class BannerController extends Controller
         if($banner->delete()) {
 
         }
-        return redirect()->route('banners.index')->with('success', 'Banner successfully deleted');
+        return redirect()->route('banners.index');
     }
 }

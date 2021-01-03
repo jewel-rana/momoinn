@@ -4,22 +4,22 @@
 namespace App\Repositories;
 
 
-use App\Models\Menu;
-use App\Repositories\Interfaces\MenuRepositoryInterface;
+use App\Repositories\Interfaces\RoleRepositoryInterface;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Cache;
+use Spatie\Permission\Models\Role;
 
-class MenuRepository extends BaseRepository implements MenuRepositoryInterface
+class RoleRepository extends BaseRepository implements RoleRepositoryInterface
 {
-    public function __construct(Menu $model)
+    public function __construct(Role $model)
     {
         parent::__construct($model);
     }
 
     public function all(): Collection
     {
-        return Cache::rememberForever('menus', function() {
-            return new Collection(parent::all());
+        return Cache::rememberForever('roles', function() {
+            return new Collection(parent::with(['permissions'])->get());
         });
     }
 

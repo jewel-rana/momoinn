@@ -28,14 +28,13 @@
                         <td>{{$key + 1}}</td>
                         <td>{{ $role->name }}</td>
                         <td>{{ $role->guard_name }}</td>
-                        <td></td>
+                        <td style="font-size: 18px;">
+                            @foreach($role->permissions as $permission)
+                                <span class="badge bg-primary">{{$permission->name}}</span>
+                            @endforeach
+                        </td>
                         <td>
-                            <a href="{{ route('users.edit', $user->id) }}" style="float: left" class="mr-2 btn btn-secondary">Edit</a>
-                            <form class="form-inline ml-2" method="POST" style="float: left;" action="{{ route('users.destroy', $user->id) }}">
-                                @method('delete')
-                                @csrf
-                                <button type="submit" class="btn form-inline btn-danger">Delete</button>
-                            </form>
+                            <a href="{{ route('roles.edit', $role->id) }}" style="float: left" class="mr-2 btn btn-secondary">Edit</a>
                         </td>
                     </tr>
                 @endforeach
@@ -46,7 +45,6 @@
                 @endif
                 </tbody>
             </table>
-            {!! $roles->links() !!}
         </div>
     </main>
 @endsection

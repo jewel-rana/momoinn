@@ -4,9 +4,9 @@
         <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
             <h1 class="h2">{{ $title }}</h1>
             <div class="btn-toolbar mb-2 mb-md-0">
-                <a href="{{ route('users.create') }}" type="button" class="btn btn-sm btn-outline-secondary">
+                <a href="{{ route('menus.create') }}" type="button" class="btn btn-sm btn-outline-secondary">
                     <span data-feather="plus"></span>
-                    Add new user
+                    Add new menu
                 </a>
             </div>
         </div>
@@ -17,40 +17,35 @@
                 <tr>
                     <th>#</th>
                     <th>Name</th>
-                    <th>Email</th>
-                    <th>Mobile</th>
-                    <th>Role</th>
+                    <th>Slug</th>
+                    <th>Parent</th>
                     <th><i class="fa fa-wrench fa-2x"></i></th>
                 </tr>
                 </thead>
                 <tbody>
-                @foreach($users as $key => $user)
+                @foreach($menus as $key => $menu)
                     <tr>
                         <td>{{$key + 1}}</td>
-                        <td>{{ $user->name }}</td>
-                        <td>{{ $user->email }}</td>
-                        <td>{{ $user->mobile }}</td>
-                        <td>{{ $user->role->name }}</td>
+                        <td>{{ $menu->name }}</td>
+                        <td>{{ $menu->slug }}</td>
+                        <td>{{ ($menu->parent) ? $menu->parent->name : '' }}</td>
                         <td>
-                            @if($user->id !== auth()->user()->id)
-                            <a href="{{ route('users.edit', $user->id) }}" style="float: left" class="mr-2 btn btn-secondary">Edit</a>
-                            <form class="form-inline ml-2" method="POST" style="float: left;" action="{{ route('users.destroy', $user->id) }}">
+                            <a href="{{ route('menus.edit', $menu->id) }}" style="float: left" class="mr-2 btn btn-secondary">Edit</a>
+                            <form class="form-inline ml-2" method="POST" style="float: left;" action="{{ route('menus.destroy', $menu->id) }}">
                                 @method('delete')
                                 @csrf
                                 <button type="submit" class="btn form-inline btn-danger">Delete</button>
                             </form>
-                            @endif
                         </td>
                     </tr>
                 @endforeach
-                @if(!$users->count())
+                @if(!$menus->count())
                     <tr>
-                        <td colspan="5">No banner added</td>
+                        <td colspan="5">No menu found</td>
                     </tr>
                 @endif
                 </tbody>
             </table>
-            {!! $users->links() !!}
         </div>
     </main>
 @endsection

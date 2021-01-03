@@ -6,10 +6,19 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\MenuCreatedRequest;
 use App\Http\Requests\MenuUpdatedRequest;
 use App\Models\Menu;
+use App\Services\Menus;
 use Illuminate\Http\Request;
+use Intervention\Image\Facades\Image;
 
 class MenuController extends Controller
 {
+    private $menus;
+    public function __construct(Menus $menus)
+    {
+        $this->menus = $menus;
+    }
+
+
     /**
      * Display a listing of the resource.
      *
@@ -17,7 +26,8 @@ class MenuController extends Controller
      */
     public function index()
     {
-        return view('dashboard.menu.index')->withTitle('Menus');
+        $menus = Menu::all();
+        return view('dashboard.menu.index', compact('menus'))->withTitle('Menus');
     }
 
     /**
@@ -38,7 +48,17 @@ class MenuController extends Controller
      */
     public function store(MenuCreatedRequest $request)
     {
-        //
+        try {
+            $request->merge([
+                'user_id' => auth()->user()->id
+            ]);
+            $this->menus->create($request->all());
+        } catch (\Exception $exception) {
+            session()->flash('error', $exception->getMessage());
+            return redirect()->back()->withInput($request->all());
+        }
+
+        return redirect()->route('menus.index');
     }
 
     /**
@@ -47,9 +67,9 @@ class MenuController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Menu $menu)
     {
-        return view('dashboard.menu.edit')->withTitle('Edit menu');
+        return view('dashboard.menu.edit', compact('menu'))->withTitle('Edit menu');
     }
 
     /**
@@ -61,7 +81,14 @@ class MenuController extends Controller
      */
     public function update(MenuUpdatedRequest $request, $id)
     {
-        //
+        try {
+            $this->menus->update($request->all(), $id);
+        } catch (\Exception $exception) {
+            session()->flash('error', $exception->getMessage());
+            return redirect()->back()->withInput($request->all());
+        }
+
+        return redirect()->route('menus.index');
     }
 
     /**
@@ -73,6 +100,6 @@ class MenuController extends Controller
     public function destroy(Menu $menu)
     {
         $menu->delete();
-        redirect()->back();
+        return redirect()->back();
     }
 }

@@ -49,11 +49,11 @@ class PermissionSeeder extends Seeder
             'coupon-delete',
             'setting-manage'
         ];
-        $role = Role::where('name', 'super_admin')->first();
+        $role = Role::where('name', 'admin')->first();
 
         foreach ($permissions as $permission) {
             $permission = Permission::create(['name' => $permission]);
-            $permission->assignRole($role);
         }
+        $role->syncPermissions($permissions);
     }
 }

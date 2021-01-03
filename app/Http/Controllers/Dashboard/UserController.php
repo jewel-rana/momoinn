@@ -3,18 +3,25 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\UserCreatedRequest;
+use App\Http\Requests\UserUpdatedRequest;
 use App\Models\User;
+use App\Services\Roles;
 use App\Services\Users;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Spatie\Permission\Models\Role;
 
 class UserController extends Controller
 {
     private $users;
-    public function __construct(Users $users)
+    private $roles;
+
+    public function __construct(Users $users, Roles $roles)
     {
         $this->users = $users;
+        $this->roles = $roles;
     }
 
     /**
@@ -35,7 +42,7 @@ class UserController extends Controller
      */
     public function create(Request $request)
     {
-        $roles = Role::whereNotIn('name', ['customer', 'reseller'])->pluck('name', 'id');
+        $roles = $this->roles->getRoles();
         return view('dashboard.user.create', compact('roles'))->withTitle('Add new user');
     }
 
@@ -45,7 +52,7 @@ class UserController extends Controller
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(UserCreatedRequest $request)
     {
         try {
             $user = $this->users->create($request->all());
@@ -89,7 +96,7 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-        $roles = Role::whereNotIn('name', ['customer'])->pluck('name', 'id');
+        $roles = $this->roles->getRoles();
         return view('dashboard.user.edit', compact('user', 'roles'))->withTitle('Edit user');
     }
 
@@ -100,14 +107,15 @@ class UserController extends Controller
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UserUpdatedRequest $request, $id)
     {
         try {
-            $user = $this->users->update($request->all(), $id);
-            $role = Role::where('id', $request->role_id)->first();
-            $user->assignRole($role);
+            DB::transaction(function() use($request, $id) {
+                $this->users->update($request->all(), $id);
+                $this->users->syncRole($request->all(), $id);
+            }, 2);
         } catch (\Exception $e) {
-            session()->flash('error', $e->getMessage());
+            session()->flash('error', $e->getMessage() . '-' . $e->getFile() . $e->getLine());
         }
         return redirect()->route('users.index');
     }

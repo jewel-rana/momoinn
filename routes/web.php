@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Dashboard\AjaxCustomerController;
 use App\Http\Controllers\Dashboard\BannerController;
 use App\Http\Controllers\Dashboard\CouponController;
 use App\Http\Controllers\Dashboard\SettingController;
@@ -25,6 +26,8 @@ Route::group(['prefix' => 'dashboard', 'middleware' => ['web', 'auth']], functio
         return view('dashboard.home.index');
     })->name('dashboard');
 
+    Route::get('customers/ajax', [AjaxCustomerController::class, 'index'])->name('customers.ajax');
+    Route::get('bookings/ajax', [AjaxCustomerController::class, 'index'])->name('bookings.ajax');
     Route::resources([
         'banners' => BannerController::class,
         'bookings' => \App\Http\Controllers\Dashboard\BookingController::class,

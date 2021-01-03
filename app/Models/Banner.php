@@ -5,6 +5,7 @@ namespace App\Models;
 use App\Jobs\BannerBeforeCreatingJob;
 use App\Jobs\BannerBeforeDeletingJob;
 use App\Jobs\BannerBeforeUpdatingJob;
+use App\Observers\BannerObserver;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -21,10 +22,12 @@ class Banner extends Model
         });
 
         static::creating(function($banner) {
+            dd($banner);
             BannerBeforeCreatingJob::dispatch($banner);
         });
 
         static::updating(function($banner) {
+            dd($banner);
             BannerBeforeUpdatingJob::dispatch($banner);
         });
     }

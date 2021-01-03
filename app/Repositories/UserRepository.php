@@ -29,4 +29,9 @@ class UserRepository extends BaseRepository implements UserRepositoryInterface
     {
         return parent::update($data, $id);
     }
+
+    public function find(int $id)
+    {
+        return parent::find($id);
+    }
 }

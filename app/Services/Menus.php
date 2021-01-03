@@ -18,4 +18,14 @@ class Menus
     {
         return $this->menu->all()->groupBy('parent_id')->sortDesc('position');
     }
+
+    public function create(array $data)
+    {
+        return $this->menu->create($data);
+    }
+
+    public function update(array $data, $id)
+    {
+        return $this->menu->update($data, $id);
+    }
 }

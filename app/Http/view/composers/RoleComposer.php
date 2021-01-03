@@ -1,28 +1,29 @@
 <?php
 
+
 namespace App\Http\View\Composers;
 
 
-use App\Services\Categories;
+use App\Services\Roles;
 use Illuminate\View\View;
 
-class CategoryComposer
+class RoleComposer
 {
     /**
      * The user repository implementation.
      *
      * @var
      */
-    protected $categories;
+    protected $roles;
 
     /**
      * Create a new profile composer.
      *
-     * @param Categories $categories
+     * @param Roles $roles
      */
-    public function __construct( Categories $categories)
+    public function __construct( Roles $roles)
     {
-        $this->categories = $categories;
+        $this->roles = $roles;
     }
 
     /**
@@ -34,7 +35,7 @@ class CategoryComposer
     public function compose(View $view)
     {
         $view->with([
-            'category_dropdowns' => $this->categories->getDropdown()
+            'role_dropdowns' => $this->roles->getRoles()
         ]);
     }
 }

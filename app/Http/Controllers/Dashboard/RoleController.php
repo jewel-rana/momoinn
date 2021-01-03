@@ -5,13 +5,19 @@ namespace App\Http\Controllers\Dashboard;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\RoleCreatedRequest;
 use App\Http\Requests\RoleUpdatedRequest;
+use App\Jobs\PermissionSyncJob;
+use App\Services\Roles;
 use Illuminate\Http\Request;
+use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
 
 class RoleController extends Controller
 {
     private $roles;
-
+    public function __construct(Roles $roles)
+    {
+        $this->roles = $roles;
+    }
     /**
      * Display a listing of the resource.
      *
@@ -19,7 +25,7 @@ class RoleController extends Controller
      */
     public function index()
     {
-        $roles = Role::with('permissions')->paginate(15);
+        $roles = $this->roles->all()->whereNotIn('name', ['customer']);
         return view('dashboard.role.index', compact('roles'))->withTitle('Roles');
     }
 
@@ -30,7 +36,14 @@ class RoleController extends Controller
      */
     public function create()
     {
-        return view('dashboard.role.create')->withTitle('Add new role');
+        $query = Permission::get();
+
+        $permissions = array();
+        foreach( $query as $q ) {
+            $param = explode('-', $q->name );
+            $permissions[$param[0]][] = $q;
+        }
+        return view('dashboard.role.create', compact('permissions'))->withTitle('Add new role');
     }
 
     /**
@@ -66,9 +79,19 @@ class RoleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Role $role)
+    public function edit($id)
     {
-        return view('dashboard.role.edit', compact('role'))->withTitle('Update role');
+        $role = Role::with('permissions')->find($id);
+        $query = Permission::get();
+        $permissions = array();
+        foreach( $query as $q ) {
+            $param = explode('-', $q->name );
+            $permissions[$param[0]][] = $q;
+        }
+
+        $rolePermissions = $role->permissions->pluck('name', 'id')->toArray();
+
+        return view('dashboard.role.edit', compact('role', 'permissions', 'rolePermissions'))->withTitle('Update role');
     }
 
     /**
@@ -81,7 +104,8 @@ class RoleController extends Controller
     public function update(RoleUpdatedRequest $request, $id)
     {
         try {
-            $this->roles->create($request->all());
+            $this->roles->update($request->all(), $id);
+            dispatch(new PermissionSyncJob($id, request()->input('permissions')));
         } catch (\Exception $exception) {
             session()->flash('error', $exception->getMessage());
         }

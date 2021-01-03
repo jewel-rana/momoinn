@@ -69,7 +69,7 @@ class BaseRepository implements BaseRepositoryInterface
         return $this->model->with($relations);
     }
 
-    private function find($id)
+    protected function find(int $id)
     {
         return $this->model->find($id);
     }
