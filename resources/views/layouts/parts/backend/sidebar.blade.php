@@ -14,6 +14,12 @@
                 </a>
             </li>
             <li class="nav-item">
+                <a class="nav-link" href="{{ route('room_types.index') }}">
+                    <span data-feather="box"></span>
+                    Rooms Types
+                </a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" href="{{ route('facilities.index', ['type' => 'facility']) }}">
                     <span data-feather="award"></span>
                     Facilities
